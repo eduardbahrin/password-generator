@@ -1,1 +1,8 @@
-# password-generator
+# Password Generator
+
+## Description
+
+## Screenshot
+
+## Link to deployed application
+
