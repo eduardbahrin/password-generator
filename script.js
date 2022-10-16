@@ -86,7 +86,19 @@ var symbols = [
 ];
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
+function generatePassword() {
+  var passwordLengthAnswer = prompt(
+    "Please type in a password length between 8 and 128 characters"
+  );
 
+  var passwordLength = parseInt(passwordLengthAnswer);
+
+  var isLowercase = confirm("Would you like lowercase characters?")
+  var isUppercase = confirm("Would you like uppercase characters?")
+  var isSpecialChar = confirm("Would you like special characters?")
+  var isNumber = confirm("Would you like number characters?")
+
+}
 
 // Write password to the #password input
 function writePassword() {
@@ -94,7 +106,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
