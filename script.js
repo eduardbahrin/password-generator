@@ -1,6 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// characters arrays
 var lowercase = [
   "a",
   "b",
@@ -87,22 +88,27 @@ var symbols = [
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 function generatePassword() {
+  // obtaining password length from user
   var passwordLengthAnswer = prompt(
     "Please type in a password length between 8 and 128 characters"
   );
 
+  // convert user input to a number
   var passwordLength = parseInt(passwordLengthAnswer, 10);
 
+  // alert user if the password length is not matching the criteria
   if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
     alert("Please input a number between 8 and 128 characters");
     return;
   }
 
+  // confirming what characters the user wants
   var isLowercase = confirm("Would you like lowercase characters?");
   var isUppercase = confirm("Would you like uppercase characters?");
   var isSpecialChar = confirm("Would you like special characters?");
   var isNumber = confirm("Would you like number characters?");
 
+  // alerting user if they don't choose any type of characters
   if (!isLowercase && !isUppercase && !isSpecialChar && !isNumber) {
     alert("Please choose at least one type of characters!");
     return;
@@ -129,6 +135,7 @@ function generatePassword() {
 
   password = "";
 
+  // choosing random caracters for password; number of random characters is defined by length of password
   for (let index = 0; index < passwordLength; index++) {
     password += finalArray[Math.floor(Math.random() * finalArray.length)];
   }
