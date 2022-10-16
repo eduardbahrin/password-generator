@@ -93,17 +93,25 @@ function generatePassword() {
 
   var passwordLength = parseInt(passwordLengthAnswer);
 
-  var isLowercase = confirm("Would you like lowercase characters?")
-  var isUppercase = confirm("Would you like uppercase characters?")
-  var isSpecialChar = confirm("Would you like special characters?")
-  var isNumber = confirm("Would you like number characters?")
+  if (
+    passwordLength < 8 ||
+    passwordLength > 128 ||
+    typeof passwordLength != String
+  ) {
+    alert("Please input a number between 8 and 128 characters");
+    return;
+  }
 
-if (!isLowercase && !isUppercase && !isSpecialChar && !isNumber){
-    alert("Please choose at least one type of characters!")
-}
+  var isLowercase = confirm("Would you like lowercase characters?");
+  var isUppercase = confirm("Would you like uppercase characters?");
+  var isSpecialChar = confirm("Would you like special characters?");
+  var isNumber = confirm("Would you like number characters?");
 
-  var finalArray = []
+  if (!isLowercase && !isUppercase && !isSpecialChar && !isNumber) {
+    alert("Please choose at least one type of characters!");
+  }
 
+  var finalArray = [];
 }
 
 // Write password to the #password input
