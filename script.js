@@ -98,6 +98,12 @@ function generatePassword() {
   var isSpecialChar = confirm("Would you like special characters?")
   var isNumber = confirm("Would you like number characters?")
 
+if (!isLowercase && !isUppercase && !isSpecialChar && !isNumber){
+    alert("Please choose at least one type of characters!")
+}
+
+  var finalArray = []
+
 }
 
 // Write password to the #password input
